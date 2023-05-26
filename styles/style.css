@@ -1,0 +1,13 @@
+/* VARIABLES */
+/* GENERIC STYLING */
+body, * {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

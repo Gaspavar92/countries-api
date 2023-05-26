@@ -1,0 +1,29 @@
+/* VARIABLES */
+
+$darkModeBackground: hsl(207, 26%, 17%);
+$darkModeText: hsl(0, 0%, 100%);
+$darkModeElement: hsl(209, 23%, 22%);
+
+$lightModeBackground: hsl(0, 0%, 98%);
+$lightModeText: hsl(200, 15%, 8%);
+$lightModeElement: hsl(0, 0%, 100%);
+$lightModeInput: hsl(0, 0%, 52%);
+
+$bodyFontSize: 14px;
+$detailedFontSize: 14px;
+$fontFamily: 'Nunito Sans', sans-serif;
+
+/* GENERIC STYLING */
+
+body, * {
+    font-family: $fontFamily;
+    font-size: $bodyFontSize;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
