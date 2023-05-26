@@ -15,11 +15,14 @@
 // })
 
 import { getCountries } from "./api.js";
+import { displayCountries } from "./main.js";
 
 // Selecting input element to retrieve data
 
 const form = document.querySelector('#get-options');
 
 form.addEventListener('submit', getCountries);
+
+displayCountries();
 
 
