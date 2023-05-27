@@ -19,7 +19,7 @@ export async function getCountries(event) {
 
         for (let key in data) {
             console.log(data[key])
-            if (data[key].name.common.toLowerCase() === userInput) {
+            if (data[key].name.common.toLowerCase() === userInput || data[key].name.official.toLowerCase() === userInput) {
                 const getCountry = countryHTML(data, key);
                 result.innerHTML = getCountry;
             } else if (userInput === data[key].region.toLowerCase()) {

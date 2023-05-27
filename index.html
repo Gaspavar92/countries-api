@@ -8,26 +8,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/07776bf57a.js" crossorigin="anonymous"></script>
     <title>Flags API</title>
 </head>
 <body>
     <header>
-        <h1>Where in the world?</h1>
-        <div class="dark-mode">
-            <p>Dark mode</p>
+        <div class="header wrapper">
+            <h1>Where in the world?</h1>
+            <div class="dark-mode">
+                <p>Dark mode</p>
+            </div>
         </div>
     </header>
 
-    <main>
+    <main class="wrapper">
         <div class="options">
-            <form action="" id="get-options">
-                <input type="text" placeholder="Search for a country..." name="country" id="get-country">
+            <form action="" id="get-options" class="wrapper">
+                <i class="fa-solid fa-magnifying-glass input-icon"></i>
+                <input type="text" placeholder="Search for a country..." name="country" id="get-country" class="input-country">
                 <select name="filter" id="filter">
                 </select>
             </form>
         </div>
 
-        <div class="result"></div>
+        <div class="result wrapper"></div>
         </div>
 
     </main>
