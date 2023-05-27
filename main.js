@@ -1,3 +1,4 @@
+import { countryHTML } from "./countries.js";
 export async function displayCountries() {
     const url = "https://restcountries.com/v3.1/all";
 
@@ -9,18 +10,8 @@ export async function displayCountries() {
         const result = document.querySelector('.result');
 
         for (let key in data) {
-            const countryHTML = `
-            <div class="country">
-            <img src="${data[key].flags.png}" alt="" id="country-flag">
-            <div class="country-name">${data[key].name.common}${data[key].name.official === data[key].name.common ? "" : `, also known as ${data[key].name.official}`}</div>
-            <div class="country-info">
-                <p class="population">Population: ${data[key].population}</p>
-                <p class="region">Region: ${data[key].region}</p>
-                <p class="capital">Capital: ${data[key].capital}</p>
-            </div>
-            `
-
-            result.innerHTML += countryHTML;
+            const getCountry = countryHTML(data, key);
+            result.innerHTML += getCountry;
         }
 
         if (data.message) {
