@@ -6,7 +6,7 @@ export function countryHTML(country, key) {
 <div class="country-info">
     <p class="population">Population: ${country[key].population.toLocaleString("en-US")}</p>
     <p class="region">Region: ${country[key].region}</p>
-    <p class="capital">Capital: ${country[key].capital}</p>
+    <p class="capital">Capital: ${country[key].capital === undefined ? "N/A" : country[key].capital}</p>
 </div>
 `
 }

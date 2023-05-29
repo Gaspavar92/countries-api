@@ -16,6 +16,7 @@
 
 import { getCountries } from "./api.js";
 import { displayCountries } from "./main.js";
+import { filterCountries } from "./filter.js";
 
 // Selecting input element to retrieve data
 
@@ -23,6 +24,7 @@ const form = document.querySelector('#get-options');
 
 form.addEventListener('submit', getCountries);
 
-displayCountries();
+filter.addEventListener('change', filterCountries)
 
+displayCountries();
 
