@@ -17,6 +17,7 @@
 import { getCountries } from "./api.js";
 import { displayCountries } from "./main.js";
 import { filterCountries } from "./filter.js";
+import {} from "./item.js";
 
 // Selecting input element to retrieve data
 
