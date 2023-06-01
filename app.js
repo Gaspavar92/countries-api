@@ -17,14 +17,42 @@
 import { getCountries } from "./api.js";
 import { displayCountries } from "./main.js";
 import { filterCountries } from "./filter.js";
+import { searchCountries } from "./search.js";
+import { countryHTML } from "./countries.js";
+import { createFilter } from "./createFilter.js"
 
 // Selecting input element to retrieve data
 
 const form = document.querySelector('#get-options');
 
-form.addEventListener('submit', getCountries);
+form.addEventListener('submit', handleGetCountries);
 
-filter.addEventListener('change', filterCountries)
+filter.addEventListener('change', handleFilterCountries)
 
-displayCountries();
+async function handleGetCountries(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    let userInput = formData.get("country").toLowerCase();
+    try {
+        searchCountries(countriesData, userInput, countryHTML);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function handleFilterCountries(event) {
+    event.preventDefault()
+    const selection = event.target.value.toLowerCase();
+    try {
+        filterCountries(countriesData, selection, countryHTML)
+    } catch {
+        console.log(error)
+    }
+}
+
+const countriesData = await getCountries();
+displayCountries(countriesData, countryHTML);
+createFilter(countriesData)
+
+// displayCountries();
 
