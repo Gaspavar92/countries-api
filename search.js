@@ -1,4 +1,4 @@
-export async function searchCountries(data, input, html) {
+export function searchCountries(data, input, html) {
 
     const inputField = document.querySelector('#get-country');
     inputField.value = "";

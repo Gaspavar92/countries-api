@@ -1,4 +1,4 @@
-export async function createFilter(data) {
+export function createFilter(data) {
     const filter = document.getElementById('filter');
 
         const allRegions = [];
@@ -13,6 +13,4 @@ export async function createFilter(data) {
           option.textContent = region;
           filter.append(option);
         }
-
-        console.log(uniqueRegions)
 }

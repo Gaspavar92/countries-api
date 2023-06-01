@@ -1,4 +1,4 @@
-export async function filterCountries(data, selection, html) {
+export function filterCountries(data, selection, html) {
         const result = document.querySelector('.result');
         result.innerHTML = "";
 

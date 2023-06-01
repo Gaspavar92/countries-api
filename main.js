@@ -1,4 +1,4 @@
-export async function displayCountries(data, html) {
+export function displayCountries(data, html) {
         
         const result = document.querySelector('.result');
 

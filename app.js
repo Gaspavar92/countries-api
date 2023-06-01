@@ -29,18 +29,17 @@ form.addEventListener('submit', handleGetCountries);
 
 filter.addEventListener('change', handleFilterCountries)
 
-async function handleGetCountries(event) {
+function handleGetCountries(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     let userInput = formData.get("country").toLowerCase();
     try {
         searchCountries(countriesData, userInput, countryHTML);
     } catch (error) {
-        console.log(error)
+        alert(error.message)
     }
 }
-
-async function handleFilterCountries(event) {
+function handleFilterCountries(event) {
     event.preventDefault()
     const selection = event.target.value.toLowerCase();
     try {
@@ -53,6 +52,4 @@ async function handleFilterCountries(event) {
 const countriesData = await getCountries();
 displayCountries(countriesData, countryHTML);
 createFilter(countriesData)
-
-// displayCountries();
 
