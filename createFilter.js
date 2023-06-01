@@ -1,5 +1,4 @@
 export function createFilter(data) {
-    const filter = document.getElementById('filter');
 
         const allRegions = [];
         for (let key in data) {

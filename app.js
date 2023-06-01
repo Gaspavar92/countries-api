@@ -15,7 +15,7 @@
 // })
 
 import { getCountries } from "./api.js";
-import { displayCountries } from "./main.js";
+import { displayCountries } from "./display.js";
 import { filterCountries } from "./filter.js";
 import { searchCountries } from "./search.js";
 import { countryHTML } from "./countries.js";
@@ -24,14 +24,15 @@ import { createFilter } from "./createFilter.js"
 // Selecting input element to retrieve data
 
 const form = document.querySelector('#get-options');
+const filter = document.getElementById('filter');
 
 form.addEventListener('submit', handleGetCountries);
-
-filter.addEventListener('change', handleFilterCountries)
+filter.addEventListener('change', handleFilterCountries);
 
 function handleGetCountries(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
+    console.log(formData)
     let userInput = formData.get("country").toLowerCase();
     try {
         searchCountries(countriesData, userInput, countryHTML);
@@ -39,6 +40,7 @@ function handleGetCountries(event) {
         alert(error.message)
     }
 }
+
 function handleFilterCountries(event) {
     event.preventDefault()
     const selection = event.target.value.toLowerCase();
