@@ -1,20 +1,13 @@
 import { countryHTML } from "./countries.js";
 export async function displayCountries() {
     const url = "https://restcountries.com/v3.1/all";
-    const result = document.querySelector('.result');
 
     try {
 
         const response = await fetch(url);
         const data = await response.json()
-
-        if (data.message) {
-            console.log(data)
-            throw {
-                message: `<p class="error">Something went wrong: ${data.message}</p>`
-        }
-    }
         
+        const result = document.querySelector('.result');
         const filter = document.getElementById('filter');
 
         const allRegions = [];
@@ -35,7 +28,12 @@ export async function displayCountries() {
             result.innerHTML += getCountry;
         }
 
-    } catch(err) {
-        result.innerHTML = err?.message || "Something went wrong...";
+        if (data.message) {
+            throw {
+                message: "Something went wrong..."
+            }
+        }
+    } catch(error) {
+        console.log(error.message)
     }
 } 
