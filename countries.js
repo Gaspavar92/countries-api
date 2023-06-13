@@ -3,7 +3,7 @@ export function countryHTML(data, key) {
  return   `
 <div class="country">
 <img src="${country.flags.png}" alt="${country.name.common} flag" id="country-flag">
-<div class="country-name">${country.name.common}${country.name.official === country.name.common ? "" : `, also known as ${country.name.official}`}</div>
+<div class="country-name" data-value="${country.name.common}">${country.name.common}${country.name.official === country.name.common ? "" : `, also known as ${country.name.official}`}</div>
 <div class="country-info">
     <p class="population">Population: ${country.population.toLocaleString("en-US")}</p>
     <p class="region">Region: ${country.region}</p>

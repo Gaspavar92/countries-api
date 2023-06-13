@@ -20,6 +20,8 @@ import { filterCountries } from "./filter.js";
 import { searchCountries } from "./search.js";
 import { countryHTML } from "./countries.js";
 import { createFilter } from "./createFilter.js"
+import { expand } from "./item.js";
+import { detailedHTML } from "./detailedHTML.js";
 
 // Selecting input element to retrieve data
 
@@ -36,6 +38,7 @@ function handleGetCountries(event) {
     let userInput = formData.get("country").toLowerCase();
     try {
         searchCountries(countriesData, userInput, countryHTML);
+        expandCountry();
     } catch (error) {
         alert(error.message)
     }
@@ -46,6 +49,7 @@ function handleFilterCountries(event) {
     const selection = event.target.value.toLowerCase();
     try {
         filterCountries(countriesData, selection, countryHTML)
+        expandCountry()
     } catch {
         console.log(error)
     }
@@ -54,4 +58,22 @@ function handleFilterCountries(event) {
 const countriesData = await getCountries();
 displayCountries(countriesData, countryHTML);
 createFilter(countriesData)
+
+function expandCountry() {
+    const countries = document.querySelectorAll('.country');
+    countries.forEach((country) => {
+        country.addEventListener('click', handleExpand)
+    })
+}
+
+expandCountry();
+
+
+function handleExpand(event) {
+    const country = event.currentTarget.querySelector('.country-name').attributes['data-value'].textContent;
+    expand(countriesData, country, detailedHTML);
+}
+
+
+
 
