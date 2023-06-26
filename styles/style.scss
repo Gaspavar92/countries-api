@@ -43,6 +43,18 @@ body {
     max-width: 1140px;
 }
 
+.icon {
+    margin-right: 5px;
+}
+
+.dark-mode:hover > p > i, .back:hover > i {
+    transform: translateX(-5px);
+}
+
+.dark-mode > p > i, .back > i {
+    transition: .5s ease;
+}
+
 /* HEADER */
 
 header {
@@ -53,6 +65,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.dark-mode {
+    cursor: pointer;
 }
 
 /* MAIN */
@@ -132,4 +148,50 @@ header {
 
 .input-icon:hover {
     color: rgb(84, 83, 83)
+}
+
+/* DETAILED MAIN */
+
+.detailed-country {
+    display: flex;
+    gap: 3rem;
+}
+
+.detailed-country-name {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.detailed-information {
+    display: flex;
+    gap: 20px;
+}
+
+.detailed-country-info {
+    width: 50%;
+}
+
+.detailed {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.detailed-native-name {
+    font-size: 1.5rem;
+}
+
+.back {
+    background-color: $lightModeElement;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 900px) {
+    .detailed-country {
+        flex-direction: column;
+    }
 }
