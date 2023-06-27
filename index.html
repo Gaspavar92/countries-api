@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/light.css" id="theme">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
@@ -16,7 +16,8 @@
         <div class="header wrapper">
             <h1>Where in the world?</h1>
             <div class="dark-mode">
-                <p><i class="fa-regular fa-moon icon"></i>Dark mode</p>
+                <i class="fa-regular fa-moon icon"></i>
+                <p>Dark mode</p>
             </div>
         </div>
     </header>
@@ -26,7 +27,7 @@
             <form action="" id="get-options" class="wrapper">
                 <button type="submit" class="button-input"><i class="fa-solid fa-magnifying-glass input-icon"></i></button>
                 <input type="text" placeholder="Search for a country..." name="country" id="get-country" class="input-country" required>
-                <select name="filter" id="filter">
+                <select name="filter" id="filter" class="filter">
                     <option value="filter" disabled selected>Filter by Region</option>
                 </select>
             </form>
