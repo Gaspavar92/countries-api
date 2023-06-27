@@ -88,8 +88,10 @@ themeButton.addEventListener('click', changeTheme)
 //     }
 // }
 
+if (localStorage.getItem('theme') !== null) {
     const theme = document.getElementById('theme');
     theme.attributes.href.textContent = localStorage.getItem('theme');
     themeButton.querySelector('p').textContent = localStorage.getItem('theme-button');
+}
 
 // changeTheme();
