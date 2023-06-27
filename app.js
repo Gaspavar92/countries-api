@@ -88,7 +88,7 @@ themeButton.addEventListener('click', changeTheme)
 //     }
 // }
 
-if (localStorage.getItem('theme') !== null) {
+if (localStorage.getItem('theme')) {
     const theme = document.getElementById('theme');
     theme.attributes.href.textContent = localStorage.getItem('theme');
     themeButton.querySelector('p').textContent = localStorage.getItem('theme-button');
