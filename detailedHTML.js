@@ -17,7 +17,7 @@ export function detailedHTML(data, key) {
                 <p class="detailed-capital"><span class="detailed">Capital:</span> ${country.capital === undefined ? "N/A" : country.capital}</p>
             </div>
             <div class="detailed-additional-info">
-                <p class=""><span class="detailed">Top Level Domain:</span> ${country?.tld}</p>
+                <p class=""><span class="detailed">Top Level Domain:</span> ${country?.tld.join(', ')}</p>
                 <p class=""><span class="detailed">Currencies:</span> ${countryCurrencyKey.map(key => country?.currencies[key].name).join(', ')}</p>
                 <p class=""><span class="detailed">Languages:</span> ${countryLanguageKey.map(key => country.languages[key]).join(', ')}</p>
             </div>

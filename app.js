@@ -22,6 +22,7 @@ import { countryHTML } from "./countries.js";
 import { createFilter } from "./createFilter.js"
 import { expand } from "./item.js";
 import { detailedHTML } from "./detailedHTML.js";
+import { changeTheme } from "./theme.js";
 
 // Selecting input element to retrieve data
 
@@ -30,6 +31,7 @@ const filter = document.getElementById('filter');
 
 form.addEventListener('submit', handleGetCountries);
 filter.addEventListener('change', handleFilterCountries);
+
 
 function handleGetCountries(event) {
     event.preventDefault();
@@ -74,6 +76,20 @@ function handleExpand(event) {
     expand(countriesData, country, detailedHTML);
 }
 
+const themeButton = document.querySelector('.dark-mode');
+themeButton.addEventListener('click', changeTheme)
 
+// if (localStorage.getItem('detailed-theme') !== "undefined") {
+//     const theme = document.getElementById('theme');
+//     theme.attributes.href.textContent = localStorage.getItem('detailed-theme');
+//     if (localStorage.getItem('detailed-theme-button') !== "undefined") {
+//         const themeButton = document.querySelector('.dark-mode').querySelector('p');
+//         themeButton.textContent = localStorage.getItem('detailed-theme-button')
+//     }
+// }
 
+    const theme = document.getElementById('theme');
+    theme.attributes.href.textContent = localStorage.getItem('theme');
+    themeButton.querySelector('p').textContent = localStorage.getItem('theme-button');
 
+// changeTheme();
