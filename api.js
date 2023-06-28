@@ -12,6 +12,7 @@ export async function getCountries() {
                 message: "Something went wrong..."
             }
         }
+        console.log(data)
         return data;
     } catch(error) {
         result.innerHTML = error.message;
