@@ -7,10 +7,10 @@ export function searchCountries(data, input, html) {
     result.innerHTML = "";
 
     for (let key in data) {
-        if (data[key].name.common.toLowerCase() === input || data[key].name.official.toLowerCase() === input) {
+        if (data[key].name.common.toLowerCase().includes(input) || data[key].name.official.toLowerCase().includes(input)) {
             const getCountry = html(data, key);
-            result.innerHTML = getCountry;
-        } else if (input === data[key].region.toLowerCase()) {
+            result.innerHTML += getCountry;
+        } else if (data[key].region.toLowerCase().includes(input)) {
             const getCountry = html(data, key);
             result.innerHTML += getCountry;
         }
