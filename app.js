@@ -24,6 +24,13 @@ import { expand } from "./item.js";
 import { detailedHTML } from "./detailedHTML.js";
 import { changeTheme } from "./theme.js";
 
+if (localStorage.getItem('theme')) {
+    const theme = document.getElementById('theme');
+    const themeButton = document.querySelector('.dark-mode');
+    theme.attributes.href.textContent = localStorage.getItem('theme');
+    themeButton.querySelector('p').textContent = localStorage.getItem('theme-button');
+}
+
 // Selecting input element to retrieve data
 
 const form = document.querySelector('#get-options');
@@ -78,9 +85,3 @@ function handleExpand(event) {
 
 const themeButton = document.querySelector('.dark-mode');
 themeButton.addEventListener('click', changeTheme)
-
-if (localStorage.getItem('theme')) {
-    const theme = document.getElementById('theme');
-    theme.attributes.href.textContent = localStorage.getItem('theme');
-    themeButton.querySelector('p').textContent = localStorage.getItem('theme-button');
-}
