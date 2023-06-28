@@ -78,6 +78,10 @@ header {
     align-items: center;
 }
 
+.dark-mode p, .dark-mode i {
+    font-size: 1.8rem;
+}
+
 /* MAIN */
 
 .options {
@@ -98,7 +102,7 @@ header {
 }
 
 .country {
-    width: calc((100% / 4) - 30px);
+    width: calc((100% / 3) - 30px);
     gap: 30px;
     height: 400px;
     overflow-y: auto;
@@ -207,5 +211,19 @@ header {
 @media (max-width: 900px) {
     .detailed-country {
         flex-direction: column;
+    }
+
+    .result {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .country {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .wrapper {
+        max-width: 600px;
     }
 }
