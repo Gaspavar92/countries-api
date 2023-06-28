@@ -27,7 +27,6 @@ filter.addEventListener('change', handleFilterCountries);
 function handleGetCountries(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    console.log(formData)
     let userInput = formData.get("country").toLowerCase();
     try {
         searchCountries(countriesData, userInput, countryHTML);
