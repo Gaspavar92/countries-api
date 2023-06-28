@@ -79,19 +79,8 @@ function handleExpand(event) {
 const themeButton = document.querySelector('.dark-mode');
 themeButton.addEventListener('click', changeTheme)
 
-// if (localStorage.getItem('detailed-theme') !== "undefined") {
-//     const theme = document.getElementById('theme');
-//     theme.attributes.href.textContent = localStorage.getItem('detailed-theme');
-//     if (localStorage.getItem('detailed-theme-button') !== "undefined") {
-//         const themeButton = document.querySelector('.dark-mode').querySelector('p');
-//         themeButton.textContent = localStorage.getItem('detailed-theme-button')
-//     }
-// }
-
 if (localStorage.getItem('theme')) {
     const theme = document.getElementById('theme');
     theme.attributes.href.textContent = localStorage.getItem('theme');
     themeButton.querySelector('p').textContent = localStorage.getItem('theme-button');
 }
-
-// changeTheme();

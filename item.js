@@ -11,7 +11,3 @@ export function expand(data, country, html) {
     localStorage.setItem('theme-button', themeButton)
     window.location.href = "./details.html";
 }
-
-// Change CSS in order to display element at the center in a fixed position
-// Add dynamically all additional elements to display
-// Change styling to fit current configuration
