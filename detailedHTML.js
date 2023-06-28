@@ -4,7 +4,7 @@ export function detailedHTML(data, key) {
     const countryCurrencyKey = Object.keys(country.currencies);
     const countryLanguageKey = Object.keys(country.languages);
  return   `
-<div class="detailed-country">
+<div class="detailed-country wrapper">
     <img src="${country.flags.png}" alt="${country.name.common} flag" id="country-flag">
     <div class="detailed-info">
         <div class="detailed-country-name" data-value="${country.name.common}">${country.name.common}${country.name.official === country.name.common ? "" : `, also known as ${country.name.official}`}</div>
